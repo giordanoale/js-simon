@@ -55,9 +55,12 @@ setTimeout(function () {
   }
 
 // 6. Comunico i risultati all'utente
+  if (!(esatti.length == 0)) {
   console.log("Hai indovinato questi numeri: " + esatti);
+  }
+
   if (!(sbagliati.length == 0)) {
     console.log("Hai sbagliato questi numeri: " + sbagliati);
   }
 
-}, 1000);
+}, 30000);
