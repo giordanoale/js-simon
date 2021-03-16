@@ -26,17 +26,38 @@ console.log(numeri);
 alert("I numeri che devi ricordare sono i seguenti: " + numeri + ". Premi OK quando li hai memorizzati!");
 
 // 4. Chiedo all'utente di digitare i 5 numeri
-var utente;
+var utente = [];
 
 setTimeout(function () {
   var j = 0;
   while (j < 5) {
-    utente = parseInt(prompt("Digita uno dei numeri che ricordi"));
-    if (numeri.includes(utente)) {
-      j++;
-    } else {
-      alert("Hai perso! Ricarica la pagina per giocare di nuovo");
-      break;
+    var numUtente = parseInt(prompt("Digita uno dei numeri che ricordi"));
+    if (!(utente.includes(numUtente))) {
+      utente.push(numUtente);
+      j++
     }
   }
+
+  console.log(utente);
+
+// 5. Controllo quali numeri sono giusti e quali sono errati
+  var esatti = [];
+  var sbagliati = [];
+
+  for (var k = 0; k < utente.length; k++) {
+    utente[k];
+    console.log(utente[k]);
+    if (numeri.includes(utente[k])) {
+      esatti.push(utente[k]);
+    } else {
+      sbagliati.push(utente[k]);
+    }
+  }
+
+// 6. Comunico i risultati all'utente
+  console.log("Hai indovinato questi numeri: " + esatti);
+  if (!(sbagliati.length == 0)) {
+    console.log("Hai sbagliato questi numeri: " + sbagliati);
+  }
+
 }, 1000);
